@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap')
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css")
+
+$soft-blue: hsl(215, 51%, 70%)
+$cyan: hsl(178, 100%, 50%)
+
+$very-dark-blue-main: hsl(217, 54%, 11%)
+$very-dark-blue-card: hsl(216, 50%, 16%)
+$very-dark-blue-line: hsl(215, 32%, 27%)
+$white: hsl(0, 0%, 100%)
+
+$font-size: 18px
+
+$family: 'Outfit', sans-serif
+$interlineado: 1rem
+
+
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    font-family: $family //300, 400 , 600
+
+.flag
+    position: absolute
+    top: 0
+    margin-top: 5px
+    border-top-right-radius: 1rem
+    border-bottom-right-radius: 1rem
+    background: #2e2e2e
+    width: 120px
+    height: 50px
+    transition: all 1s
+    display: flex
+    justify-content: center
+    align-items: center
+    color: #fff
+    font-family: sans-serif
+    text-transform: uppercase
+    font-weight: 700
+    font-size: 16px
+    &:hover
+        width: 400px
+        color: transparent
+        .attribution
+            width: 400px
+            opacity: 1
+
+.attribution
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    transition: all 1s
+    width: 0
+    font-size: 16px
+    text-align: center
+    opacity: 0
+    overflow: hidden
+    font-family: sans-serif
+    color: #fff
+    text-decoration: none
+    a
+        color: #fff
+
+html
+    font-size: $font-size
+
+.nftcon
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100vh
+    background: $very-dark-blue-main
+
+.nft
+    background: $very-dark-blue-card
+    border-radius: 1rem
+    padding: 1rem
+    color: $white
+    margin: 1rem
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    &__image
+        position: relative
+        margin: auto
+        border-radius: 2rem
+        cursor: pointer
+        max-width: 300px
+        border-radius: 1rem
+        overflow: hidden
+        display: flex
+        justify-content: center
+        align-items: center
+        &:hover .nft__image--overlay
+            opacity: 0.4
+        &:hover i
+            opacity: 1
+        img
+            display: block
+        &--overlay
+            position: absolute
+            background: $cyan
+            left: 0
+            top: 0
+            width: 100%
+            height: 100%
+            opacity: 0
+            transition: 1s ease
+        i
+            position: absolute
+            font-size: 2rem
+            opacity: 0
+
+
+        img 
+            max-width: 300px      
+   
+    h2
+        margin-top: $interlineado
+        a
+            text-decoration: none
+            color: $white
+            &:hover
+                color: $cyan
+    p
+        margin-top: $interlineado
+        max-width: 18rem
+        color: $soft-blue
+    &__details
+        margin: $interlineado 0
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__ethereum
+        display: flex
+        justify-content: center
+        align-items: center
+        color: cyan
+        img
+            margin-right: 0.5rem
+    &__time
+        display: flex
+        justify-content: center
+        align-items: center
+        img
+            margin-right: 0.5rem
+    &__user
+        margin-top: $interlineado
+        display: flex
+        justify-content: center
+        align-items: center
+        font-weight: 300
+        font-size: 0.8rem
+        span
+            color: $soft-blue
+            a
+                color: $white
+                text-decoration: none
+                color: $white
+                &:hover
+                    color: cyan
+                
+    &__avatar
+        width: 15%
+        margin-right: $interlineado
+    hr
+        color: $very-dark-blue-line
+
+
+@media screen and ( max-width: 340px  )
+    .nft
+        width: 280px
+        &__image
+            img
+                width: 100%
+                height: 100%
+        h2
+            font-size: 1.1rem
+        p
+            font-size: 0.8rem
+    
+@media screen and ( max-width: 360px  )
+    .nft
+        width: 320px
+        &__image
+            img
+                width: 100%
+                height: 100%
+        h2
+            font-size: 1.1rem
+        p
+            font-size: 0.8rem
+    
